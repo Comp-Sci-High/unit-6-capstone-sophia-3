@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marketplace | Vintage Bloom</title>
+  <link rel="stylesheet" href="marketplace.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Title -->
+  <header>
+    <h1 class="store-name">Los Tiliches de la Sra. Narcisa</h1>
+    <nav class="navbar">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#">Women</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Dresses</a></li>
+            <li><a href="#">Tops</a></li>
+            <li><a href="#">Bottoms</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Men</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Shirts</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Outerwear</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Accessories</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Hats</a></li>
+            <li><a href="#">Jewelry</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Marketplace Layout -->
+  <main class="marketplace">
+    <!-- Filter Sidebar -->
+    <aside class="filter-panel">
+      <h3>Filter</h3>
+      <label><input type="checkbox"> Dresses</label>
+      <label><input type="checkbox"> Tops</label>
+      <label><input type="checkbox"> Outerwear</label>
+      <label><input type="checkbox"> Bottoms</label>
+      <label><input type="checkbox"> Accessories</label>
+    </aside>
+
+    <!-- Product Cards -->
+    <section class="product-grid">
+      <% for(let i=0; i < items.length; i++) { %>
+      <div class="card">
+  <img src="https://via.placeholder.com/250x300.png?text=Vintage+Dress" alt="Vintage Dress">
+  <h4>Vintage Cream Dress</h4>
+  <p class="price">$68.00</p>
+  <p class="size">Size: M</p>
+</div>
+      }
+    </section>
+  </main>
+
+</body>
+</html>

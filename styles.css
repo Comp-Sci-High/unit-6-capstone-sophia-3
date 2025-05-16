@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #fffaf0;
+  color: #4e342e;
+}
+
+.store-name {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #795548;
+  padding-top: 20px;
+}
+
+.navbar {
+  background-color: #f5f5dc;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.menu > li > a {
+  text-decoration: none;
+  color: #5d4037;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.menu > li > a:hover {
+  color: #3e2723;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fffaf0;
+  border: 1px solid #d7ccc8;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #5d4037;
+  font-size: 0.95rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1602810318651-1c55ee5e7201');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-button {
+  background-color: #d7ccc8;
+  color: #3e2723;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-button:hover {
+  background-color: #bcaaa4;
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #f5f5f5;
+  border: 2px solid #d7ccc8;
+  border-radius: 20px;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #4e342e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  font-family: 'Playfair Display', serif;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.corner {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  z-index: 50;
+  opacity: 0.3;
+}
+
+.corner img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+}
+
+/* Specific corners and rotation */
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1); /* mirror horizontally */
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1); /* mirror vertically */
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1, -1); /* mirror both */
+}
+

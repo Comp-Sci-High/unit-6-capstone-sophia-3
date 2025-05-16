@@ -16,11 +16,14 @@ app.use((req, res, next) => {
 //Items Schema and routes 
 const itemSchema = new mongoose.Schema(
     {
+        name: {type: String, required: true},
         image: {type: String, required: true},
         price: {type: Number, required: true, default: 20},
         size: {type: Number,}
     }
 );
+const Item = mongoose.model("Item", itemSchema, "Items");
+
 app.post("/addItem", async (req, res) => {
 const addItem = await new Item({
     image: req.body.image,
@@ -33,15 +36,15 @@ res.json(addItem)
 
 app.get("/items", async (req, res) => {
     const items = await Item.find({})
+    res.render("marketplace.ejs", {items})
     res.render("items.ejs", {items})
 })
 //After this route go to items.ejs and input the values
 
 app.patch("/items/update/:name", async ( req, res) => {
     const response = await Item.findOneAndUpdate({
-        image: req.params.image,
-        price: req.params.price, 
-        size: req.params.size,
+        name: req.params.name,
+        
     },{
         image: req.body.image,
         price: req.body.price,
@@ -50,14 +53,15 @@ app.patch("/items/update/:name", async ( req, res) => {
     res.json(response)
 })
 
-app.delete("/delete/:item", async (req, res) => {
-    const itemName = req.params.itemName
+app.delete("/delete/:name", async (req, res) => {
+    const name = req.params.name
     const response = await Item.findOneAndDelete({
         name: req.params.name,
     })
     res.json(response)
 })
-const Item = mongoose.model("Item", itemSchema, "Items");
+
+
 async function startServer() {
     // Add your SRV string, make sure that the database is called SE12
     await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster0.u9yhg.mongodb.net/CSHpets?retryWrites=true&w=majority&appName=Cluster0");
