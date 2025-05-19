@@ -58,12 +58,12 @@
     <section class="product-grid">
       <% for(let i=0; i < items.length; i++) { %>
       <div class="card">
-  <img src="https://via.placeholder.com/250x300.png?text=Vintage+Dress" alt="Vintage Dress">
-  <h4>Vintage Cream Dress</h4>
-  <p class="price">$68.00</p>
-  <p class="size">Size: M</p>
+  <img src="<%= image[i] %>" alt="Vintage Dress">
+  <h4><%= name[i] %></h4>
+  <p class="price"><%= price[i] %></p>
+  <p class="size"><%=size[i] %></p>
 </div>
-      }
+    <%  } %>
     </section>
   </main>
 
