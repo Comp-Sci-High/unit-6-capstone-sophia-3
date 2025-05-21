@@ -19,16 +19,19 @@ const itemSchema = new mongoose.Schema(
         name: {type: String, required: true},
         image: {type: String, required: true},
         price: {type: Number, required: true, default: 20},
-        size: {type: Number,}
+        size: {type: String,},
+        description: {type: String,}
     }
 );
 const Item = mongoose.model("Item", itemSchema, "Items");
 
 app.post("/addItem", async (req, res) => {
 const addItem = await new Item({
+    name: req.body.name,
     image: req.body.image,
     price: req.body.price, 
     size: req.body.size,
+    description: req.body.description,
 }).save()
 console.log(addItem)
 res.json(addItem)
@@ -37,6 +40,11 @@ res.json(addItem)
 app.get("/items", async (req, res) => {
     const items = await Item.find({})
     res.render("marketplace.ejs", {items})
+    
+})
+app.get("/items", async (req, res) => {
+    const items = await Item.find({})
+    
     res.render("items.ejs", {items})
 })
 //After this route go to items.ejs and input the values

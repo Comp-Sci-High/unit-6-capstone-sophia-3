@@ -58,10 +58,10 @@
     <section class="product-grid">
       <% for(let i=0; i < items.length; i++) { %>
       <div class="card">
-  <img src="<%= image[i] %>" alt="Vintage Dress">
-  <h4><%= name[i] %></h4>
-  <p class="price"><%= price[i] %></p>
-  <p class="size"><%=size[i] %></p>
+  <img src="<%= items[i].name %>" alt="Vintage Dress">
+  <h4><%= items[i].name %></h4>
+  <p class="price"><%= items[i].price %></p>
+  <p class="size"><%=size %></p>
 </div>
     <%  } %>
     </section>
