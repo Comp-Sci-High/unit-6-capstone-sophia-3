@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #fffaf0;
+  color: #4e342e;
+}
+
+/* Title */
+.store-name {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #795548;
+  padding-top: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #f5f5dc;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.menu > li > a {
+  text-decoration: none;
+  color: #5d4037;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.menu > li > a:hover {
+  color: #3e2723;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fffaf0;
+  border: 1px solid #d7ccc8;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #5d4037;
+  font-size: 0.95rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.form-card {
+  background-color: #fdf6f0;
+  border: 2px solid #d7ccc8;
+  border-radius: 18px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+.form-card h2 {
+  margin-top: 0;
+  color: #6d4c41;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+label {
+  font-size: 1rem;
+  color: #5d4037;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d7ccc8;
+  background-color: #fffaf0;
+  font-size: 1rem;
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #d7ccc8;
+  color: #4e342e;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #c8b7af;
+}

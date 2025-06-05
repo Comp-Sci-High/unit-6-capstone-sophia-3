@@ -25,6 +25,10 @@ const itemSchema = new mongoose.Schema(
 );
 const Item = mongoose.model("Item", itemSchema, "Items");
 
+app.get("/", (res, req) => {
+  res.sendFile(__dirname + "/public/index.html")
+ })
+
 app.post("/addItem", async (req, res) => {
 const addItem = await new Item({
     name: req.body.name,
@@ -42,6 +46,9 @@ app.get("/items", async (req, res) => {
     res.render("marketplace.ejs", {items})
     
 })
+app.post("/addItem", (req, res) => {
+
+})
 app.get("/items", async (req, res) => {
     const items = await Item.find({})
     
@@ -49,7 +56,7 @@ app.get("/items", async (req, res) => {
 })
 //After this route go to items.ejs and input the values
 
-app.patch("/items/update/:name", async ( req, res) => {
+app.patch("/update/:name", async ( req, res) => {
     const response = await Item.findOneAndUpdate({
         name: req.params.name,
         
