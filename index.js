@@ -41,18 +41,16 @@ console.log(addItem)
 res.json(addItem)
 })
 
-app.get("/items", async (req, res) => {
+app.get("/marketplace", async (req, res) => {
     const items = await Item.find({})
     res.render("marketplace.ejs", {items})
     
 })
-app.post("/addItem", (req, res) => {
 
-})
 app.get("/items", async (req, res) => {
     const items = await Item.find({})
     
-    res.render("items.ejs", {items})
+    res.render("item.ejs", {items})
 })
 //After this route go to items.ejs and input the values
 
